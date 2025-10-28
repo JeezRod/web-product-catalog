@@ -123,11 +123,20 @@ function displayProducts(products) {
 // Generate image URLs for a product based on its ID
 function generateImageUrls(productId) {
     const imageUrls = [];
-    // Try up to 5 images per product (can be adjusted)
-    for (let i = 1; i <= 5; i++) {
-        const imageName = i === 1 ? `${productId}.jpg` : `${productId}-${i}.jpg`;
-        imageUrls.push(`${GITHUB_IMAGES_BASE_URL}${imageName}`);
+    const extensions = ['jpg', 'png', 'jpeg', 'webp'];
+    
+    // Try main image with different extensions
+    extensions.forEach(ext => {
+        imageUrls.push(`${GITHUB_IMAGES_BASE_URL}${productId}.${ext}`);
+    });
+    
+    // Try up to 5 additional images
+    for (let i = 2; i <= 5; i++) {
+        extensions.forEach(ext => {
+            imageUrls.push(`${GITHUB_IMAGES_BASE_URL}${productId}-${i}.${ext}`);
+        });
     }
+    
     return imageUrls;
 }
 
@@ -161,51 +170,90 @@ function createImageGallery(productId, imageUrls) {
     const thumbnailsContainer = document.createElement('div');
     thumbnailsContainer.className = 'image-thumbnails';
     
-    // Load and check which images exist
-    Promise.all(imageUrls.map(async (url, index) => {
-        try {
-            const response = await fetch(url, { method: 'HEAD' });
-            if (response.ok) {
-                return { url, index };
-            }
-        } catch (error) {
-            return null;
+    // Create an image object to test loading without showing 404 in console
+    const testImage = new Image();
+    let validImageFound = false;
+    let currentIndex = 0;
+    
+    function tryNextImage() {
+        if (currentIndex >= imageUrls.length) {
+            // No valid images found, keep placeholder
+            return;
         }
-    })).then(results => {
-        const validImages = results.filter(result => result !== null);
         
-        if (validImages.length > 0) {
-            // Set main image to first valid image
-            mainImage.src = validImages[0].url;
+        const url = imageUrls[currentIndex];
+        currentIndex++;
+        
+        testImage.onload = function() {
+            if (!validImageFound) {
+                validImageFound = true;
+                mainImage.src = url;
+                
+                // Try to find more images for gallery
+                findAdditionalImages(productId, [url]);
+            }
+        };
+        
+        testImage.onerror = function() {
+            // Try next image
+            tryNextImage();
+        };
+        
+        testImage.src = url;
+    }
+    
+    function findAdditionalImages(productId, foundImages) {
+        const additionalUrls = [];
+        const extensions = ['jpg', 'png', 'jpeg', 'webp'];
+        
+        for (let i = 2; i <= 5; i++) {
+            extensions.forEach(ext => {
+                additionalUrls.push(`${GITHUB_IMAGES_BASE_URL}${productId}-${i}.${ext}`);
+            });
+        }
+        
+        const imageTests = additionalUrls.map(url => {
+            return new Promise((resolve) => {
+                const img = new Image();
+                img.onload = () => resolve(url);
+                img.onerror = () => resolve(null);
+                img.src = url;
+            });
+        });
+        
+        Promise.all(imageTests).then(results => {
+            const validAdditional = results.filter(url => url !== null);
+            const allImages = [...foundImages, ...validAdditional];
             
-            // Create thumbnails if there are multiple images
-            if (validImages.length > 1) {
-                validImages.forEach((imageData, index) => {
+            if (allImages.length > 1) {
+                allImages.forEach((url, index) => {
                     const thumbnail = document.createElement('img');
                     thumbnail.className = 'image-thumbnail';
-                    thumbnail.src = imageData.url;
+                    thumbnail.src = url;
                     thumbnail.alt = `Imagen ${index + 1}`;
                     
                     // Add click event to change main image
                     thumbnail.addEventListener('click', () => {
-                        mainImage.src = imageData.url;
-                        // Remove active class from all thumbnails
+                        mainImage.src = url;
                         thumbnailsContainer.querySelectorAll('.thumbnail-active').forEach(t => 
                             t.classList.remove('thumbnail-active'));
-                        // Add active class to clicked thumbnail
                         thumbnail.classList.add('thumbnail-active');
                     });
                     
-                    // Mark first thumbnail as active
                     if (index === 0) {
                         thumbnail.classList.add('thumbnail-active');
                     }
                     
                     thumbnailsContainer.appendChild(thumbnail);
                 });
+                
+                imageContainer.appendChild(thumbnailsContainer);
             }
-        }
-    });
+        });
+    }
+    
+    // Start trying images
+    tryNextImage();
     
     // Error handling for main image
     mainImage.onerror = function() {
