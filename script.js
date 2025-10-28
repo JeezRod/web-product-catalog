@@ -95,7 +95,7 @@ function populateBrandFilter() {
 }
 
 // Display products
-function displayProducts(products) {
+async function displayProducts(products) {
     const container = document.getElementById('productContainer');
     
     if (products.length === 0) {
@@ -111,47 +111,41 @@ function displayProducts(products) {
     const grid = document.createElement('div');
     grid.className = 'product-grid';
 
-    products.forEach(product => {
-        const card = createProductCard(product);
+    // Create all product cards
+    for (const product of products) {
+        const card = await createProductCard(product);
         grid.appendChild(card);
-    });
+    }
 
     container.innerHTML = '';
     container.appendChild(grid);
 }
 
-// Generate image URLs for a product based on its ID
-function generateImageUrls(productId) {
-    const imageUrls = [];
+// Check if image exists for a product ID with any common extension
+async function findProductImage(productId) {
+    const extensions = ['jpg', 'png', 'jpeg', 'webp'];
     
-    // Primary format - try .jpg first (most common)
-    imageUrls.push(`${IMAGES_BASE_URL}${productId}.jpg`);
-    
-    // Alternative formats for main image
-    imageUrls.push(`${IMAGES_BASE_URL}${productId}.png`);
-    imageUrls.push(`${IMAGES_BASE_URL}${productId}.jpeg`);
-    imageUrls.push(`${IMAGES_BASE_URL}${productId}.webp`);
-    
-    return imageUrls;
-}
-
-// Check if image exists and return the first valid one
-async function getValidImageUrl(imageUrls) {
-    for (const url of imageUrls) {
-        try {
-            const response = await fetch(url, { method: 'HEAD' });
-            if (response.ok) {
-                return url;
-            }
-        } catch (error) {
-            // Continue to next image
+    for (const ext of extensions) {
+        const url = `${IMAGES_BASE_URL}${productId}.${ext}`;
+        
+        // Use Image object to test without showing 404s
+        const testResult = await new Promise((resolve) => {
+            const img = new Image();
+            img.onload = () => resolve(url);
+            img.onerror = () => resolve(null);
+            img.src = url;
+        });
+        
+        if (testResult) {
+            return testResult;
         }
     }
+    
     return PLACEHOLDER_IMAGE;
 }
 
 // Create image gallery for multiple images
-function createImageGallery(productId, imageUrls) {
+async function createImageGallery(productId) {
     const imageContainer = document.createElement('div');
     imageContainer.className = 'product-image-container';
     
@@ -165,89 +159,41 @@ function createImageGallery(productId, imageUrls) {
     const thumbnailsContainer = document.createElement('div');
     thumbnailsContainer.className = 'image-thumbnails';
     
-    // Create an image object to test loading without showing 404 in console
-    const testImage = new Image();
-    let validImageFound = false;
-    let currentIndex = 0;
+    // Find main image
+    const mainImageUrl = await findProductImage(productId);
+    mainImage.src = mainImageUrl;
     
-    function tryNextImage() {
-        if (currentIndex >= imageUrls.length) {
-            // No valid images found, keep placeholder
-            return;
-        }
+    // Only check for additional images if main image exists
+    if (mainImageUrl !== PLACEHOLDER_IMAGE) {
+        const additionalImages = await findAdditionalImages(productId);
+        const allImages = [mainImageUrl, ...additionalImages];
         
-        const url = imageUrls[currentIndex];
-        currentIndex++;
-        
-        testImage.onload = function() {
-            if (!validImageFound) {
-                validImageFound = true;
-                mainImage.src = url;
+        // Create gallery only if there are multiple images
+        if (allImages.length > 1) {
+            allImages.forEach((url, index) => {
+                const thumbnail = document.createElement('img');
+                thumbnail.className = 'image-thumbnail';
+                thumbnail.src = url;
+                thumbnail.alt = `Imagen ${index + 1}`;
                 
-                // Try to find more images for gallery
-                findAdditionalImages(productId, [url]);
-            }
-        };
-        
-        testImage.onerror = function() {
-            // Try next image
-            tryNextImage();
-        };
-        
-        testImage.src = url;
-    }
-    
-    function findAdditionalImages(productId, foundImages) {
-        // Only check for additional images if main image exists
-        const additionalUrls = [];
-        
-        // Try jpg first for additional images (most common format)
-        for (let i = 2; i <= 5; i++) {
-            additionalUrls.push(`${IMAGES_BASE_URL}${productId}-${i}.jpg`);
-        }
-        
-        const imageTests = additionalUrls.map(url => {
-            return new Promise((resolve) => {
-                const img = new Image();
-                img.onload = () => resolve(url);
-                img.onerror = () => resolve(null);
-                img.src = url;
-            });
-        });
-        
-        Promise.all(imageTests).then(results => {
-            const validAdditional = results.filter(url => url !== null);
-            const allImages = [...foundImages, ...validAdditional];
-            
-            if (allImages.length > 1) {
-                allImages.forEach((url, index) => {
-                    const thumbnail = document.createElement('img');
-                    thumbnail.className = 'image-thumbnail';
-                    thumbnail.src = url;
-                    thumbnail.alt = `Imagen ${index + 1}`;
-                    
-                    // Add click event to change main image
-                    thumbnail.addEventListener('click', () => {
-                        mainImage.src = url;
-                        thumbnailsContainer.querySelectorAll('.thumbnail-active').forEach(t => 
-                            t.classList.remove('thumbnail-active'));
-                        thumbnail.classList.add('thumbnail-active');
-                    });
-                    
-                    if (index === 0) {
-                        thumbnail.classList.add('thumbnail-active');
-                    }
-                    
-                    thumbnailsContainer.appendChild(thumbnail);
+                // Add click event to change main image
+                thumbnail.addEventListener('click', () => {
+                    mainImage.src = url;
+                    thumbnailsContainer.querySelectorAll('.thumbnail-active').forEach(t => 
+                        t.classList.remove('thumbnail-active'));
+                    thumbnail.classList.add('thumbnail-active');
                 });
                 
-                imageContainer.appendChild(thumbnailsContainer);
-            }
-        });
+                if (index === 0) {
+                    thumbnail.classList.add('thumbnail-active');
+                }
+                
+                thumbnailsContainer.appendChild(thumbnail);
+            });
+            
+            imageContainer.appendChild(thumbnailsContainer);
+        }
     }
-    
-    // Start trying images
-    tryNextImage();
     
     // Error handling for main image
     mainImage.onerror = function() {
@@ -255,23 +201,45 @@ function createImageGallery(productId, imageUrls) {
     };
     
     imageContainer.appendChild(mainImage);
-    if (thumbnailsContainer.children.length > 0) {
-        imageContainer.appendChild(thumbnailsContainer);
-    }
     
     return imageContainer;
 }
 
+// Find additional images for a product (2-5)
+async function findAdditionalImages(productId) {
+    const additionalImages = [];
+    const extensions = ['jpg', 'png', 'jpeg', 'webp'];
+    
+    for (let i = 2; i <= 5; i++) {
+        for (const ext of extensions) {
+            const url = `${IMAGES_BASE_URL}${productId}-${i}.${ext}`;
+            
+            const testResult = await new Promise((resolve) => {
+                const img = new Image();
+                img.onload = () => resolve(url);
+                img.onerror = () => resolve(null);
+                img.src = url;
+            });
+            
+            if (testResult) {
+                additionalImages.push(testResult);
+                break; // Found image with this number, move to next
+            }
+        }
+    }
+    
+    return additionalImages;
+}
+
 // Create product card
-function createProductCard(product) {
+async function createProductCard(product) {
     const card = document.createElement('div');
     card.className = 'product-card';
 
     const productId = product.ID;
-    const imageUrls = generateImageUrls(productId);
 
     // Create the card structure
-    const imageGallery = createImageGallery(productId, imageUrls);
+    const imageGallery = await createImageGallery(productId);
     
     const productInfo = document.createElement('div');
     productInfo.className = 'product-info';
