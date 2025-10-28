@@ -136,34 +136,23 @@ header p {
     width: fit-content;
 }
 
-.product-description {
-    color: #666;
-    line-height: 1.6;
-    margin-bottom: 15px;
-    flex: 1;
+.product-price {
+    font-size: 1.3em;
+    font-weight: 700;
+    color: #2c5aa0;
+    margin-bottom: 12px;
 }
 
-.product-stock {
-    padding: 8px 15px;
-    border-radius: 5px;
-    font-weight: 600;
-    text-align: center;
+.product-brand {
+    color: #555;
+    font-size: 0.95em;
+    margin-bottom: 8px;
+}
+
+.product-presentation {
+    color: #777;
     font-size: 0.9em;
-}
-
-.stock-in {
-    background: #d4edda;
-    color: #155724;
-}
-
-.stock-low {
-    background: #fff3cd;
-    color: #856404;
-}
-
-.stock-out {
-    background: #f8d7da;
-    color: #721c24;
+    margin-bottom: 15px;
 }
 
 .no-results {
