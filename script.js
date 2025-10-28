@@ -37,7 +37,9 @@ async function loadProducts() {
         allProducts = parseCSV(csvText);
         populateCategoryFilter();
         populateBrandFilter();
-        displayProducts(allProducts);
+        
+        // Apply default filter (Skin Care)
+        filterProducts();
     } catch (error) {
         document.getElementById('productContainer').innerHTML = `
             <div class="error">
@@ -103,6 +105,11 @@ function populateCategoryFilter() {
         option.textContent = category;
         categoryFilter.appendChild(option);
     });
+    
+    // Set default to Skin Care
+    if (categories.includes('Skin Care')) {
+        categoryFilter.value = 'Skin Care';
+    }
 }
 
 // Populate brand filter dropdown
@@ -380,6 +387,28 @@ function filterProducts() {
 document.getElementById('searchInput').addEventListener('input', filterProducts);
 document.getElementById('categoryFilter').addEventListener('change', filterProducts);
 document.getElementById('brandFilter').addEventListener('change', filterProducts);
+
+// Scroll to top button functionality
+const scrollToTopBtn = document.getElementById('scrollToTop');
+
+if (scrollToTopBtn) {
+    // Show/hide button based on scroll position
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            scrollToTopBtn.classList.add('visible');
+        } else {
+            scrollToTopBtn.classList.remove('visible');
+        }
+    });
+
+    // Scroll to top when clicked
+    scrollToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
 
 // Load products on page load
 loadProducts();

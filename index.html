@@ -8,12 +8,24 @@
     <link rel="stylesheet" href="styles.css?v=2.0">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Crystal Beauty</h1>
-            <p>Envíos a todo Costa Rica 🇨🇷</p>
-        </header>
+    <!-- Top Navigation Bar -->
+    <nav class="top-nav">
+        <div class="container">
+            <div class="nav-content">
+                <img src="favicon.png" alt="Crystal Beauty Logo" class="nav-logo">
+                <h1 class="brand-name">Crystal Beauty</h1>
+            </div>
+        </div>
+    </nav>
 
+    <!-- Banner -->
+    <div class="banner">
+        <div class="container">
+            <p>Envíos a todo Costa Rica 🇨🇷</p>
+        </div>
+    </div>
+
+    <div class="container">
         <div class="filters">
             <div class="filter-group">
                 <label for="searchInput">🔍 Buscar Productos</label>
@@ -37,6 +49,9 @@
             <div class="loading">Cargando productos...</div>
         </div>
     </div>
+
+    <!-- Scroll to top button -->
+    <button id="scrollToTop" class="scroll-to-top" aria-label="Volver arriba">↑</button>
 
     <script src="script.js?v=2.0"></script>
 </body>

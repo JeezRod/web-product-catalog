@@ -6,32 +6,61 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #fec4f6 0%, #ffffff 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #fec4f6 100%);
     min-height: 100vh;
-    padding: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+/* Top Navigation Bar */
+.top-nav {
+    background: rgb(249, 249, 249);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 5px 15px;
+}
+
+.nav-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.brand-name {
+    font-size: 1.5em;
+    margin: 0;
+    color: #F1C5D6;
+    font-weight: 500;
+}
+
+/* Banner */
+.banner {
+    background: #F1C5D6;
+    color: white;
+    text-align: center;
+    padding: 0px 20px;
+}
+
+.banner p {
+    margin: 0;
+    font-size: 0.9em;
+    font-weight: 500;
 }
 
 .container {
     max-width: 1400px;
     margin: 0 auto;
-}
-
-header {
-    text-align: center;
-    color: white;
-    margin-bottom: 40px;
-    padding: 20px;
-}
-
-header h1 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-}
-
-header p {
-    font-size: 1.1em;
-    opacity: 0.9;
+    padding: 10px;
 }
 
 .filters {
@@ -276,22 +305,69 @@ header p {
     margin: 20px 0;
 }
 
+/* Scroll to top button */
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 45px;
+    height: 45px;
+    background: rgba(102, 126, 234, 0.9);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s, transform 0.3s, background 0.3s;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(10px);
+}
+
+.scroll-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-to-top:hover {
+    background: rgba(102, 126, 234, 1);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.scroll-to-top:active {
+    transform: translateY(-1px);
+}
+
 @media (max-width: 768px) {
-    body {
+    .nav-content {
+        padding: 8px 15px;
+    }
+
+    .nav-logo {
+        width: 35px;
+        height: 35px;
+    }
+
+    .brand-name {
+        font-size: 1.3em;
+    }
+
+    .banner {
+        padding: 0px 15px;
+    }
+
+    .banner p {
+        font-size: 0.85em;
+    }
+
+    .container {
         padding: 10px;
-    }
-
-    header {
-        margin-bottom: 20px;
-        padding: 15px 10px;
-    }
-
-    header h1 {
-        font-size: 1.8em;
-    }
-
-    header p {
-        font-size: 0.95em;
     }
 
     .product-grid {
@@ -338,15 +414,36 @@ header p {
     .slider-arrow.next {
         right: 5px;
     }
+
+    .scroll-to-top {
+        width: 40px;
+        height: 40px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 18px;
+    }
 }
 
 @media (max-width: 480px) {
-    body {
-        padding: 5px;
+    .nav-content {
+        padding: 7px 12px;
     }
 
-    header h1 {
-        font-size: 1.5em;
+    .nav-logo {
+        width: 30px;
+        height: 30px;
+    }
+
+    .brand-name {
+        font-size: 1.1em;
+    }
+
+    .banner p {
+        font-size: 0.8em;
+    }
+
+    .container {
+        padding: 10px;
     }
 
     .filters {
