@@ -123,19 +123,14 @@ function displayProducts(products) {
 // Generate image URLs for a product based on its ID
 function generateImageUrls(productId) {
     const imageUrls = [];
-    const extensions = ['jpg', 'png', 'jpeg', 'webp'];
     
-    // Try main image with different extensions
-    extensions.forEach(ext => {
-        imageUrls.push(`${IMAGES_BASE_URL}${productId}.${ext}`);
-    });
+    // Primary format - try .jpg first (most common)
+    imageUrls.push(`${IMAGES_BASE_URL}${productId}.jpg`);
     
-    // Try up to 5 additional images
-    for (let i = 2; i <= 5; i++) {
-        extensions.forEach(ext => {
-            imageUrls.push(`${IMAGES_BASE_URL}${productId}-${i}.${ext}`);
-        });
-    }
+    // Alternative formats for main image
+    imageUrls.push(`${IMAGES_BASE_URL}${productId}.png`);
+    imageUrls.push(`${IMAGES_BASE_URL}${productId}.jpeg`);
+    imageUrls.push(`${IMAGES_BASE_URL}${productId}.webp`);
     
     return imageUrls;
 }
@@ -203,13 +198,12 @@ function createImageGallery(productId, imageUrls) {
     }
     
     function findAdditionalImages(productId, foundImages) {
+        // Only check for additional images if main image exists
         const additionalUrls = [];
-        const extensions = ['jpg', 'png', 'jpeg', 'webp'];
         
+        // Try jpg first for additional images (most common format)
         for (let i = 2; i <= 5; i++) {
-            extensions.forEach(ext => {
-                additionalUrls.push(`${IMAGES_BASE_URL}${productId}-${i}.${ext}`);
-            });
+            additionalUrls.push(`${IMAGES_BASE_URL}${productId}-${i}.jpg`);
         }
         
         const imageTests = additionalUrls.map(url => {
