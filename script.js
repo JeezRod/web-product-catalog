@@ -281,7 +281,7 @@ function createProductCard(product) {
         <span class="product-category">${product['Product Type']}</span>
         <div class="product-price">${product['Selling Price CRC']}</div>
         <div class="product-brand"><strong>Marca:</strong> ${product.Brand}</div>
-        <div class="product-presentation"><strong>Tamaño:</strong> ${product.Presentation}</div>
+        <div class="product-presentation"><strong>Presentación:</strong> ${product.Presentation}</div>
     `;
 
     card.appendChild(imageGallery);
