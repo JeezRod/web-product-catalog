@@ -151,71 +151,162 @@ function createImageGallery(productId) {
     const imageContainer = document.createElement('div');
     imageContainer.className = 'product-image-container';
     
-    // Main image display
-    const mainImage = document.createElement('img');
-    mainImage.className = 'product-image main-image';
-    mainImage.alt = `Producto ${productId}`;
-    mainImage.src = PLACEHOLDER_IMAGE;
-    
-    // Image thumbnails container
-    const thumbnailsContainer = document.createElement('div');
-    thumbnailsContainer.className = 'image-thumbnails';
-    
     // Find main image asynchronously
     findProductImage(productId).then(mainImageUrl => {
-        mainImage.src = mainImageUrl;
-        
         // Only check for additional images if main image exists
         if (mainImageUrl !== PLACEHOLDER_IMAGE) {
             findAdditionalImages(productId).then(additionalImages => {
                 const allImages = [mainImageUrl, ...additionalImages];
                 
-                // Create gallery only if there are multiple images
+                // Create slider if there are multiple images, otherwise just show single image
                 if (allImages.length > 1) {
-                    allImages.forEach((url, index) => {
-                        const thumbnail = document.createElement('img');
-                        thumbnail.className = 'image-thumbnail';
-                        thumbnail.src = url;
-                        thumbnail.alt = `Imagen ${index + 1}`;
-                        
-                        // Add click event to change main image
-                        thumbnail.addEventListener('click', () => {
-                            mainImage.src = url;
-                            thumbnailsContainer.querySelectorAll('.thumbnail-active').forEach(t => 
-                                t.classList.remove('thumbnail-active'));
-                            thumbnail.classList.add('thumbnail-active');
-                        });
-                        
-                        if (index === 0) {
-                            thumbnail.classList.add('thumbnail-active');
-                        }
-                        
-                        thumbnailsContainer.appendChild(thumbnail);
-                    });
-                    
-                    imageContainer.appendChild(thumbnailsContainer);
+                    createImageSlider(imageContainer, allImages, productId);
+                } else {
+                    createSingleImage(imageContainer, mainImageUrl, productId);
                 }
             });
+        } else {
+            createSingleImage(imageContainer, PLACEHOLDER_IMAGE, productId);
         }
     });
-    
-    // Error handling for main image
-    mainImage.onerror = function() {
-        this.src = PLACEHOLDER_IMAGE;
-    };
-    
-    imageContainer.appendChild(mainImage);
     
     return imageContainer;
 }
 
-// Find additional images for a product (2-5)
+// Create a single image (no slider)
+function createSingleImage(container, imageUrl, productId) {
+    const img = document.createElement('img');
+    img.className = 'product-image';
+    img.alt = `Producto ${productId}`;
+    img.src = imageUrl;
+    img.onerror = function() {
+        this.src = PLACEHOLDER_IMAGE;
+    };
+    container.appendChild(img);
+}
+
+// Create swipeable image slider
+function createImageSlider(container, images, productId) {
+    let currentIndex = 0;
+    
+    // Slider wrapper
+    const slider = document.createElement('div');
+    slider.className = 'image-slider';
+    
+    // Add all images
+    images.forEach((url, index) => {
+        const img = document.createElement('img');
+        img.className = 'product-image';
+        img.alt = `Producto ${productId} - Imagen ${index + 1}`;
+        img.src = url;
+        img.draggable = false;
+        slider.appendChild(img);
+    });
+    
+    container.appendChild(slider);
+    
+    // Navigation arrows
+    const prevArrow = document.createElement('button');
+    prevArrow.className = 'slider-arrow prev';
+    prevArrow.innerHTML = '‹';
+    prevArrow.setAttribute('aria-label', 'Imagen anterior');
+    
+    const nextArrow = document.createElement('button');
+    nextArrow.className = 'slider-arrow next';
+    nextArrow.innerHTML = '›';
+    nextArrow.setAttribute('aria-label', 'Imagen siguiente');
+    
+    container.appendChild(prevArrow);
+    container.appendChild(nextArrow);
+    
+    // Indicators (dots)
+    const indicators = document.createElement('div');
+    indicators.className = 'image-indicators';
+    
+    images.forEach((_, index) => {
+        const dot = document.createElement('div');
+        dot.className = 'indicator-dot';
+        if (index === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goToSlide(index));
+        indicators.appendChild(dot);
+    });
+    
+    container.appendChild(indicators);
+    
+    // Update slider position
+    function updateSlider() {
+        slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+        
+        // Update indicators
+        indicators.querySelectorAll('.indicator-dot').forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentIndex);
+        });
+        
+        // Update arrows
+        prevArrow.disabled = currentIndex === 0;
+        nextArrow.disabled = currentIndex === images.length - 1;
+    }
+    
+    function goToSlide(index) {
+        currentIndex = index;
+        updateSlider();
+    }
+    
+    function nextSlide() {
+        if (currentIndex < images.length - 1) {
+            currentIndex++;
+            updateSlider();
+        }
+    }
+    
+    function prevSlide() {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateSlider();
+        }
+    }
+    
+    // Arrow click events
+    prevArrow.addEventListener('click', prevSlide);
+    nextArrow.addEventListener('click', nextSlide);
+    
+    // Touch/swipe support
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    slider.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    
+    slider.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    }, { passive: true });
+    
+    function handleSwipe() {
+        const swipeThreshold = 50;
+        const diff = touchStartX - touchEndX;
+        
+        if (Math.abs(diff) > swipeThreshold) {
+            if (diff > 0) {
+                nextSlide(); // Swipe left
+            } else {
+                prevSlide(); // Swipe right
+            }
+        }
+    }
+    
+    // Initialize
+    updateSlider();
+}
+
+// Find additional images for a product (1-5)
 async function findAdditionalImages(productId) {
     const additionalImages = [];
     const extensions = ['jpg', 'webp', 'png', 'jpeg'];
     
-    // Check each number (2-5) sequentially
-    for (let i = 2; i <= 5; i++) {
+    // Check each number (1-5) sequentially
+    for (let i = 1; i <= 5; i++) {
         let found = false;
         
         for (const ext of extensions) {
