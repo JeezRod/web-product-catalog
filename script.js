@@ -16,8 +16,6 @@ async function loadAvailableImages() {
         imageFiles.forEach(filename => {
             availableImages.add(filename);
         });
-        
-        console.log(`Loaded ${availableImages.size} available images`);
     } catch (error) {
         console.warn('Could not load image list:', error);
     }

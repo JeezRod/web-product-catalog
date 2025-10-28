@@ -139,11 +139,12 @@ body {
 
 .product-image {
     width: 100%;
-    height: 300px;
-    object-fit: cover;
-    background: #f5f5f5;
+    height: 350px;
+    object-fit: contain;
+    background: white;
     display: block;
     flex-shrink: 0;
+    padding: 15px;
 }
 
 /* Special styling for placeholder SVG */
@@ -386,7 +387,7 @@ body {
     }
 
     .product-image {
-        height: 280px;
+        height: 320px;
     }
 
     .product-info {
@@ -455,7 +456,7 @@ body {
     }
 
     .product-image {
-        height: 250px;
+        height: 280px;
     }
 
     .product-info {
