@@ -95,7 +95,7 @@ function populateBrandFilter() {
 }
 
 // Display products
-async function displayProducts(products) {
+function displayProducts(products) {
     const container = document.getElementById('productContainer');
     
     if (products.length === 0) {
@@ -112,40 +112,42 @@ async function displayProducts(products) {
     grid.className = 'product-grid';
 
     // Create all product cards
-    for (const product of products) {
-        const card = await createProductCard(product);
+    products.forEach(product => {
+        const card = createProductCard(product);
         grid.appendChild(card);
-    }
+    });
 
     container.innerHTML = '';
     container.appendChild(grid);
 }
 
 // Check if image exists for a product ID with any common extension
-async function findProductImage(productId) {
-    const extensions = ['jpg', 'png', 'jpeg', 'webp'];
+function findProductImage(productId) {
+    const extensions = ['jpg', 'webp', 'png', 'jpeg'];
+    let currentIndex = 0;
     
-    for (const ext of extensions) {
-        const url = `${IMAGES_BASE_URL}${productId}.${ext}`;
-        
-        // Use Image object to test without showing 404s
-        const testResult = await new Promise((resolve) => {
+    return new Promise((resolve) => {
+        function tryNext() {
+            if (currentIndex >= extensions.length) {
+                resolve(PLACEHOLDER_IMAGE);
+                return;
+            }
+            
+            const url = `${IMAGES_BASE_URL}${productId}.${extensions[currentIndex]}`;
+            currentIndex++;
+            
             const img = new Image();
             img.onload = () => resolve(url);
-            img.onerror = () => resolve(null);
+            img.onerror = () => tryNext();
             img.src = url;
-        });
-        
-        if (testResult) {
-            return testResult;
         }
-    }
-    
-    return PLACEHOLDER_IMAGE;
+        
+        tryNext();
+    });
 }
 
 // Create image gallery for multiple images
-async function createImageGallery(productId) {
+function createImageGallery(productId) {
     const imageContainer = document.createElement('div');
     imageContainer.className = 'product-image-container';
     
@@ -155,45 +157,47 @@ async function createImageGallery(productId) {
     mainImage.alt = `Producto ${productId}`;
     mainImage.src = PLACEHOLDER_IMAGE;
     
-    // Image thumbnails container (if multiple images exist)
+    // Image thumbnails container
     const thumbnailsContainer = document.createElement('div');
     thumbnailsContainer.className = 'image-thumbnails';
     
-    // Find main image
-    const mainImageUrl = await findProductImage(productId);
-    mainImage.src = mainImageUrl;
-    
-    // Only check for additional images if main image exists
-    if (mainImageUrl !== PLACEHOLDER_IMAGE) {
-        const additionalImages = await findAdditionalImages(productId);
-        const allImages = [mainImageUrl, ...additionalImages];
+    // Find main image asynchronously
+    findProductImage(productId).then(mainImageUrl => {
+        mainImage.src = mainImageUrl;
         
-        // Create gallery only if there are multiple images
-        if (allImages.length > 1) {
-            allImages.forEach((url, index) => {
-                const thumbnail = document.createElement('img');
-                thumbnail.className = 'image-thumbnail';
-                thumbnail.src = url;
-                thumbnail.alt = `Imagen ${index + 1}`;
+        // Only check for additional images if main image exists
+        if (mainImageUrl !== PLACEHOLDER_IMAGE) {
+            findAdditionalImages(productId).then(additionalImages => {
+                const allImages = [mainImageUrl, ...additionalImages];
                 
-                // Add click event to change main image
-                thumbnail.addEventListener('click', () => {
-                    mainImage.src = url;
-                    thumbnailsContainer.querySelectorAll('.thumbnail-active').forEach(t => 
-                        t.classList.remove('thumbnail-active'));
-                    thumbnail.classList.add('thumbnail-active');
-                });
-                
-                if (index === 0) {
-                    thumbnail.classList.add('thumbnail-active');
+                // Create gallery only if there are multiple images
+                if (allImages.length > 1) {
+                    allImages.forEach((url, index) => {
+                        const thumbnail = document.createElement('img');
+                        thumbnail.className = 'image-thumbnail';
+                        thumbnail.src = url;
+                        thumbnail.alt = `Imagen ${index + 1}`;
+                        
+                        // Add click event to change main image
+                        thumbnail.addEventListener('click', () => {
+                            mainImage.src = url;
+                            thumbnailsContainer.querySelectorAll('.thumbnail-active').forEach(t => 
+                                t.classList.remove('thumbnail-active'));
+                            thumbnail.classList.add('thumbnail-active');
+                        });
+                        
+                        if (index === 0) {
+                            thumbnail.classList.add('thumbnail-active');
+                        }
+                        
+                        thumbnailsContainer.appendChild(thumbnail);
+                    });
+                    
+                    imageContainer.appendChild(thumbnailsContainer);
                 }
-                
-                thumbnailsContainer.appendChild(thumbnail);
             });
-            
-            imageContainer.appendChild(thumbnailsContainer);
         }
-    }
+    });
     
     // Error handling for main image
     mainImage.onerror = function() {
@@ -208,9 +212,12 @@ async function createImageGallery(productId) {
 // Find additional images for a product (2-5)
 async function findAdditionalImages(productId) {
     const additionalImages = [];
-    const extensions = ['jpg', 'png', 'jpeg', 'webp'];
+    const extensions = ['jpg', 'webp', 'png', 'jpeg'];
     
+    // Check each number (2-5) sequentially
     for (let i = 2; i <= 5; i++) {
+        let found = false;
+        
         for (const ext of extensions) {
             const url = `${IMAGES_BASE_URL}${productId}-${i}.${ext}`;
             
@@ -223,8 +230,14 @@ async function findAdditionalImages(productId) {
             
             if (testResult) {
                 additionalImages.push(testResult);
-                break; // Found image with this number, move to next
+                found = true;
+                break; // Found this number, move to next
             }
+        }
+        
+        // If we didn't find image #i, stop looking for higher numbers
+        if (!found) {
+            break;
         }
     }
     
@@ -232,14 +245,14 @@ async function findAdditionalImages(productId) {
 }
 
 // Create product card
-async function createProductCard(product) {
+function createProductCard(product) {
     const card = document.createElement('div');
     card.className = 'product-card';
 
     const productId = product.ID;
 
     // Create the card structure
-    const imageGallery = await createImageGallery(productId);
+    const imageGallery = createImageGallery(productId);
     
     const productInfo = document.createElement('div');
     productInfo.className = 'product-info';
