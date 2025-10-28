@@ -1,0 +1,4 @@
+SKU,Product Name,Description,Category,Stock Status,Photo URL
+SKU-001,Sample Product 1,This is a description for sample product 1. High quality and durable.,Electronics,In Stock,images/sample-product-1.jpg
+SKU-002,Sample Product 2,This is a description for sample product 2. Perfect for everyday use.,Home & Garden,In Stock,images/sample-product-2.jpg
+SKU-003,Sample Product 3,This is a description for sample product 3. Limited edition item.,Fashion,Low Stock,images/sample-product-3.jpg
