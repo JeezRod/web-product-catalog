@@ -1,10 +1,34 @@
 let allProducts = [];
+let availableImages = new Set();
 const PLACEHOLDER_IMAGE = './images/placeholder.svg';
 const IMAGES_BASE_URL = './images/';
+
+// Fetch list of available images from the images directory
+async function loadAvailableImages() {
+    try {
+        const response = await fetch('./images/images.json');
+        if (!response.ok) {
+            console.warn('Could not load images.json');
+            return;
+        }
+        
+        const imageFiles = await response.json();
+        imageFiles.forEach(filename => {
+            availableImages.add(filename);
+        });
+        
+        console.log(`Loaded ${availableImages.size} available images`);
+    } catch (error) {
+        console.warn('Could not load image list:', error);
+    }
+}
 
 // Fetch and parse CSV
 async function loadProducts() {
     try {
+        // Load available images first
+        await loadAvailableImages();
+        
         const response = await fetch('products.csv');
         if (!response.ok) {
             throw new Error('No se pudo cargar products.csv');
@@ -121,29 +145,15 @@ function displayProducts(products) {
     container.appendChild(grid);
 }
 
-// Check if image exists for a product ID with any common extension
+// Check if image exists for a product ID using the preloaded image list
 function findProductImage(productId) {
-    const extensions = ['jpg', 'webp', 'png', 'jpeg'];
-    let currentIndex = 0;
+    const filename = `${productId}.webp`;
     
-    return new Promise((resolve) => {
-        function tryNext() {
-            if (currentIndex >= extensions.length) {
-                resolve(PLACEHOLDER_IMAGE);
-                return;
-            }
-            
-            const url = `${IMAGES_BASE_URL}${productId}.${extensions[currentIndex]}`;
-            currentIndex++;
-            
-            const img = new Image();
-            img.onload = () => resolve(url);
-            img.onerror = () => tryNext();
-            img.src = url;
-        }
-        
-        tryNext();
-    });
+    if (availableImages.has(filename)) {
+        return `${IMAGES_BASE_URL}${filename}`;
+    }
+    
+    return PLACEHOLDER_IMAGE;
 }
 
 // Create image gallery for multiple images
@@ -151,24 +161,23 @@ function createImageGallery(productId) {
     const imageContainer = document.createElement('div');
     imageContainer.className = 'product-image-container';
     
-    // Find main image asynchronously
-    findProductImage(productId).then(mainImageUrl => {
-        // Only check for additional images if main image exists
-        if (mainImageUrl !== PLACEHOLDER_IMAGE) {
-            findAdditionalImages(productId).then(additionalImages => {
-                const allImages = [mainImageUrl, ...additionalImages];
-                
-                // Create slider if there are multiple images, otherwise just show single image
-                if (allImages.length > 1) {
-                    createImageSlider(imageContainer, allImages, productId);
-                } else {
-                    createSingleImage(imageContainer, mainImageUrl, productId);
-                }
-            });
+    // Find main image synchronously using preloaded list
+    const mainImageUrl = findProductImage(productId);
+    
+    // Only check for additional images if main image exists
+    if (mainImageUrl !== PLACEHOLDER_IMAGE) {
+        const additionalImages = findAdditionalImages(productId);
+        const allImages = [mainImageUrl, ...additionalImages];
+        
+        // Create slider if there are multiple images, otherwise just show single image
+        if (allImages.length > 1) {
+            createImageSlider(imageContainer, allImages, productId);
         } else {
-            createSingleImage(imageContainer, PLACEHOLDER_IMAGE, productId);
+            createSingleImage(imageContainer, mainImageUrl, productId);
         }
-    });
+    } else {
+        createSingleImage(imageContainer, PLACEHOLDER_IMAGE, productId);
+    }
     
     return imageContainer;
 }
@@ -300,34 +309,18 @@ function createImageSlider(container, images, productId) {
     updateSlider();
 }
 
-// Find additional images for a product (1-5)
-async function findAdditionalImages(productId) {
+// Find additional images for a product (1-5) using preloaded image list
+function findAdditionalImages(productId) {
     const additionalImages = [];
-    const extensions = ['jpg', 'webp', 'png', 'jpeg'];
     
     // Check each number (1-5) sequentially
     for (let i = 1; i <= 5; i++) {
-        let found = false;
+        const filename = `${productId}-${i}.webp`;
         
-        for (const ext of extensions) {
-            const url = `${IMAGES_BASE_URL}${productId}-${i}.${ext}`;
-            
-            const testResult = await new Promise((resolve) => {
-                const img = new Image();
-                img.onload = () => resolve(url);
-                img.onerror = () => resolve(null);
-                img.src = url;
-            });
-            
-            if (testResult) {
-                additionalImages.push(testResult);
-                found = true;
-                break; // Found this number, move to next
-            }
-        }
-        
-        // If we didn't find image #i, stop looking for higher numbers
-        if (!found) {
+        if (availableImages.has(filename)) {
+            additionalImages.push(`${IMAGES_BASE_URL}${filename}`);
+        } else {
+            // If we didn't find image #i, stop looking for higher numbers
             break;
         }
     }
