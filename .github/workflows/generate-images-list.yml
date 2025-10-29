@@ -19,7 +19,13 @@ jobs:
       - name: Generate images.json
         run: |
           cd images
-          ls -1 *.webp 2>/dev/null | jq -R -s -c 'split("\n") | map(select(length > 0))' > images.json
+          if ls *.webp 1> /dev/null 2>&1; then
+            ls -1 *.webp | jq -R -s -c 'split("\n") | map(select(length > 0))' > images.json
+          else
+            echo '[]' > images.json
+          fi
+          echo "Generated images.json:"
+          cat images.json
           
       - name: Commit and push if changed
         run: |
