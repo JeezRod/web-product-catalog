@@ -348,14 +348,21 @@ function createProductCard(product) {
     
     productInfo.innerHTML = `
         <h2 class="product-name">${product['Product Name']}</h2>
-        <span class="product-category">${product['Product Type']}</span>
         <div class="product-price">${product['Selling Price CRC']}</div>
-        <div class="product-brand"><strong>Marca:</strong> ${product.Brand}</div>
-        <div class="product-presentation"><strong>Presentación:</strong> ${product.Presentation}</div>
     `;
 
     card.appendChild(imageGallery);
     card.appendChild(productInfo);
+
+    // Make card clickable
+    card.style.cursor = 'pointer';
+    card.addEventListener('click', (e) => {
+        // Don't navigate if clicking on slider arrows or indicators
+        if (e.target.closest('.slider-arrow') || e.target.closest('.indicator-dot')) {
+            return;
+        }
+        window.location.href = `pages/product.html?id=${productId}`;
+    });
 
     return card;
 }

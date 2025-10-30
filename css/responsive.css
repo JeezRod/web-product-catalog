@@ -268,4 +268,46 @@
         gap: 6px;
         padding: 6px 10px;
     }
+
+    /* Product Detail Page */
+    .product-detail-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .main-product-image {
+        height: 350px;
+    }
+
+    .detail-name {
+        font-size: 1.5em;
+    }
+
+    .detail-price {
+        font-size: 1.8em;
+    }
+
+    .detail-description {
+        font-size: 0.95em;
+        padding: 15px;
+    }
+
+    .detail-actions {
+        flex-direction: column;
+    }
+
+    .whatsapp-btn,
+    .back-btn {
+        width: 100%;
+    }
+
+    .spec-label {
+        min-width: 100px;
+        font-size: 0.9em;
+    }
+
+    .thumbnail {
+        width: 60px;
+        height: 60px;
+    }
 }

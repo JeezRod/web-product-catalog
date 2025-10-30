@@ -1,87 +1,87 @@
-ID,Product Name,Product Type,Selling Price CRC,Brand,Presentation
-1,medicube - PDRN Pink Collagen Capsule Cream,Skin Care,₡15.500.00,medicube,55g
-2,medicube - Deep Vita C Capsule Cream,Skin Care,₡16.500.00,medicube,55g
-3,medicube - Crema Facial TXA Niacinamide Capsule Cream,Skin Care,₡15.500.00,medicube,55g
-4,medicube - PDRN Pink Collagen Exosome Shot Serum 7500,Skin Care,₡13.500.00,medicube,30ml
-5,Round Lab - Birch Juice Moisturizing Sunscreen,Skin Care,₡10.500.00,Round Lab,50ml
-6,SKIN 1004 - Madagascar Centella Poremizing Quick Clay Stick Mask,Skin Care,₡11.000.00,SKIN 1004,27g
-7,SKIN 1004 - Madagascar Centella Asiatica 100 Ampoule,Skin Care,₡14.000.00,SKIN 1004,100ml
-8,SKIN 1004 - Set de Viaje Madagascar Centella,Skin Care,₡19.000.00,SKIN 1004,1/20ml - 4/30ml
-9,SKIN 1004 - Madagascar Centella Ampoule Kit,Skin Care,₡18.500.00,SKIN 1004,4/30ml
-10,Dr. Althea - 345 Relief Cream,Skin Care,₡13.500.00,Dr. Althea,50ml
-11,numbuzin - No.5 Vitamin Boosting Essential Toner,Skin Care,₡11.000.00,numbuzin,200ml
-12,numbuzin - Serum No.5 Vitamin Concentrated,Skin Care,₡13.000.00,numbuzin,30ml
-13,numbuzin - No.5+ Glutathione Vitamin-Niacinamide Concentrated Pad,Skin Care,₡14.000.00,numbuzin,70 pads
-14,mixsoon - Bean Essence,Skin Care,₡13.500.00,mixsoon,50ml
-15,KSECRET - SEOUL 1988 Serum : Retinal Liposome 2% + Black Ginseng,Skin Care,₡10.000.00,KSECRET,30ml
-16,KSECRET - SEOUL 1988 Cleansing Oil : Pine Cica 1% + Probiotics,Skin Care,₡12.500.00,KSECRET,200ml
-17,KSECRET - SEOUL 1988 Eye Cream : Retinal Liposome 4% + Fermented Bean,Skin Care,₡9.500.00,KSECRET,30ml
-18,Tocobo - Cotton Soft Sun Stick,Skin Care,₡10.000.00,Tocobo,19g
-19,Tocobo - Vita Waterproof Sun Stick,Skin Care,₡11.000.00,Tocobo,19g
-20,Tocobo - Cica Cooling Sun Stick,Skin Care,₡10.500.00,Tocobo,19g
-21,Beauty of Joseon - Matte Sun Stick,Skin Care,₡9.500.00,Beauty of Joseon,18g
-22,Beauty of Joseon - Relief Sun Cream,Skin Care,₡11.000.00,Beauty of Joseon,50ml
-23,Hydra Jelly Pocket Lip Jam,Make Up,₡4.000.00,SHEGLAM,"Sugar Swirl,Guava Glow,Apricot Pop,Watermelon Whirl,Strawberry Splash,Fig Flirt,Dragonfruit Dew,Choco Cream"
-24,Crystal Glaze Moisturizing Lip Care,Make Up,₡5.000.00,SHEGLAM,"Candy Lane,Strawberry Milk,Melon Pop,Cocoa Cookie"
-25,Fall In Line Peel Off Lip Liner Stain,Make Up,₡3.500.00,SHEGLAM,"Pinky Promise,Brownie Points,Mauvelous"
-26,Lip Rules Liner & Gloss Pen-Play,Make Up,₡4.500.00,SHEGLAM,"By The Book,Play Fair,Case x Case,Judgey Much,Golden Rule"
-27,Take A Hint Lip Tint,Make Up,₡4.000.00,SHEGLAM,"Memories,Birthday Lips,Good Habits,So Fly,Primp,Cheeky,Baby Face,Obsessed,Level Up,Mocha Loca,Love On Tap,Wake-up Call"
-28,Peel Talk Lip Tint,Make Up,₡4.000.00,SHEGLAM,"Celeb Crush,Samesies,Tongue Twister"
-29,Lip Facts Lip Liner,Make Up,₡2.000.00,SHEGLAM,"True Faith,Concrete Jungle,Neutral,Toasted,Mojave,""But First,Coffee"",Solo Dance,Purple Smoke,Momojo,Misty Rose,City Nights,Crimson,Cosmopolitan,Brazen"
-30,Pout Pillow Cushion Matte Liquid Lipstick,Make Up,₡5.000.00,SHEGLAM,"Catching Z's,Counting Sheep,Hit The Hay,Nod Off,40 Winks"
-31,Color Bloom Liquid Blush,Make Up,₡5.000.00,SHEGLAM,"Pink Slip,Coral Glow,On Call,Lilac Dream,Candy Apple,Fine Carmine"
-32,Glass Glow Blush Stick,Make Up,₡5.000.00,SHEGLAM,"Pink Lemonade,Stunner,Cherry Express,Brisk Babe"
-33,Lunar Orbit Blush Ball,Make Up,₡5.000.00,SHEGLAM,"Adorn,Delight,Atmosphere,Gravity,Ultraviolet,Galactic,Astrid"
-34,Jelly-Licious Hydrating Lip & Blush Tint,Make Up,₡5.000.00,SHEGLAM,"Cheerio,Ahoy,Coucou,Howdy"
-35,All-In-One Volume & Length Mascara,Make Up,₡6.500.00,SHEGLAM,"Washable,Waterproof"
-36,Lashlighter Up & Out Mascara,Make Up,₡5.500.00,SHEGLAM,8ml
-37,Set Me Up Brow Hold,Make Up,₡4.000.00,SHEGLAM,5g
-38,Purito SEOUL - Wonder Releaf Centella BB Cream,Skin Care,₡7.500.00,Purito,"30ml,Neutral Ivory,Light Beige,Natural Beige,Sand Beige,Caramel Beige"
-39,Purito SEOUL - Wonder Releaf Centella Eye Cream Unscented,Skin Care,₡8.500.00,Purito,30ml
-40,Purito SEOUL - Wonder Releaf Centella Cream,Skin Care,₡11.000.00,Purito,50ml
-41,Purito SEOUL - Wonder Releaf Centella Serum Unscented,Skin Care,₡14.000.00,Purito,60ml
-42,Crystal Jelly Glaze Stick,Make Up,₡6.000.00,SHEGLAM,"Rosy Gem,Starlit Silver,Fuchsia Fun,Golden Girl,Aura Blitz,Lilac Luster"
-43,Go Go Glow Highlighting Body Mist,Make Up,₡6.500.00,SHEGLAM,"Champagne Shimmer,Crimson Sparkle,Fairy Twinkle,Gold,Love Bomb,Frosted Opal"
-44,Insta-Ready Face & Under Eye Setting Powder Duo,Make Up,₡7.500.00,SHEGLAM,
-45,Matte Allure Lipstick,Make Up,₡5.500.00,SHEGLAM,
-47,Matte Allure Mini Liquid Lipstick,Make Up,₡5.000.00,SHEGLAM,3pcs
-48,SKIN 1004 - Madagascar Centella Ampoule Foam,Skin Care,₡10.500.00,SKIN 1004,125ml
-49,SKIN 1004 - Madagascar Centella Light Cleansing Oil,Skin Care,₡11.500.00,SKIN 1004,200ml
-50,Arencia - Fresh Green Rice Mochi Cleanser,Skin Care,₡11.500.00,Arencia,120g
-51,Precision Sculpt Liquid Contour Duo,Make Up,₡6.500.00,SHEGLAM,
-52,Purito SEOUL - Mighty Bamboo Panthenol Cream,Skin Care,₡11.000.00,Purito,100ml
-53,Lashlighter Remove Lash Treatment,Make Up,₡5.500.00,SHEGLAM,
-54,Anua - Heartleaf Succinic Moisture Cleansing Foam,Skin Care,₡12.000.00,Anua,150ml
-55,medicube - PDRN Pink Peptide Serum,Skin Care,₡13.000.00,medicube,30ml
-56,Purito SEOUL - Mighty Bamboo Panthenol Cleanser,Skin Care,₡10.000.00,Purito,150ml
-57,Arencia - Holy Hyssop Serum 30,Skin Care,₡11.000.00,Arencia,50g
-58,medicube - Zero Pore Blackhead Mud Mask,Skin Care,₡11.000.00,medicube,100g
-59,Anua - Peach 70 Niacin Serum,Skin Care,₡12.000.00,Anua,30ml
-60,Anua - Niacinamide 10 TXA 4 Serum,Skin Care,₡15.500.00,Anua,30ml
-61,SKIN 1004 - Madagascar Centella Double Cleansing Duo Set,Skin Care,₡18.500.00,SKIN 1004,Oil/Foam
-62,Anua - Azelaic Acid 10 Hyaluron Redness Soothing Serum,Skin Care,₡14.500.00,Anua,30ml
-63,Arencia - Fresh Rosehip Rice Mochi Cleanser,Skin Care,₡11.500.00,Arencia,120g
-64,Arencia - Green Tea + LHA Deep Pore Rice Cake Cleanser,Skin Care,₡12.500.00,Arencia,150g
-65,Beauty of Joseon - Relief Sun Aqua-fresh,Skin Care,₡11.500.00,Beauty of Joseon,50ml
-66,Abib - Heartleaf Spot Pad Calming Touch,Skin Care,₡12.500.00,Abib,80 pads
-67,Arencia - Rice Mucin Cleanser,Skin Care,₡11.500.00,Arencia,120g
-68,Purito SEOUL - TXA 6 Niacinamide 10 Retinal Serum,Skin Care,₡14.000.00,Purito,30ml
-69,Anua - Double Cleansing Duo Set,Skin Care,₡22.000.00,Anua,Oil/Foam
-70,Anua - Heartleaf Pore Control Cleansing Oil,Skin Care,₡13.500.00,Anua,200ml
-71,Anua - Heartleaf Quercetinol Pore Deep Cleansing Foam,Skin Care,₡10.500.00,Anua,150ml
-72,COSRX - Low pH Good Morning Gel Cleanser,Skin Care,₡10.000.00,COSRX,150ml
-73,Beauty of Joseon - Green Plum Refreshing Cleanser,Skin Care,₡10.000.00,Beauty of Joseon,100ml
-74,Beauty of Joseon - Revive Eye Serum,Skin Care,₡12.000.00,Beauty of Joseon,30ml
-75,numbuzin - No.9 NAD Bio Lifting-sil Essence,Skin Care,₡16.000.00,numbuzin,50ml
-76,Arencia - Calendula Rice Mochi Cleanser,Skin Care,₡11.500.00,Arencia,120g
-77,Arencia - Rice Mucin Glow Serum 30,Skin Care,₡12.500.00,Arencia,50g
-78,SKIN 1004 - Lab in Nature Madagascar Centella Niacinamide 10 Boosting Shot Ampoule,Skin Care,₡11.000.00,SKIN 1004,30ml
-79,Anua - Heartleaf 77 Clear Pad,Skin Care,₡14.500.00,Anua,160ml
-80,SKIN 1004 - Lab in Nature Madagascar Centella Retinol 0.2 Boosting Shot Ampoule,Skin Care,₡13.000.00,SKIN 1004,30ml
-81,Purito SEOUL - Oat-In Calming Gel Cream,Skin Care,₡12.000.00,Purito,100ml
-82,medicube - Zero Pore Pad 2.0,Skin Care,₡17.000.00,medicube,70 pads
-83,celimax - The Vita-A Retinal Shot Tightening Booster,Skin Care,₡13.500.00,celimax,15ml
-84,JUMISO - All Day Vitamin Brightening & Balancing Facial Serum,Skin Care,₡11.500.00,JUMISO,30ml
-85,SKIN 1004 - Madagascar Centella Hyalu-Cica Water-Fit Sun Serum,Skin Care,₡10.000.00,SKIN 1004,50ml
-86,Arencia - Fresh Red Smoothie Serum 30,Skin Care,₡12.500.00,Arencia,50g
-87,COSRX - Advanced Snail 96 Mucin Power Essence,Skin Care,₡14.000.00,COSRX,100ml
+ID,Product Name,Product Type,Selling Price CRC,Brand,Presentation,Description
+1,medicube - PDRN Pink Collagen Capsule Cream,Skin Care,₡15.500.00,medicube,55g,"Crema hidratante con PDRN y colágeno rosa para mejorar elasticidad, reducir líneas finas y restaurar la piel dañada"
+2,medicube - Deep Vita C Capsule Cream,Skin Care,₡16.500.00,medicube,55g,"Crema iluminadora con vitamina C pura que combate manchas oscuras, unifica el tono y proporciona hidratación profunda"
+3,medicube - Crema Facial TXA Niacinamide Capsule Cream,Skin Care,₡15.500.00,medicube,55g,"Crema anti-manchas con ácido tranexámico y niacinamida que reduce hiperpigmentación y mejora textura de la piel"
+4,medicube - PDRN Pink Collagen Exosome Shot Serum 7500,Skin Care,₡13.500.00,medicube,30ml,"Serum concentrado con PDRN y exosomas que regenera y fortalece la barrera cutánea para una piel más firme y radiante"
+5,Round Lab - Birch Juice Moisturizing Sunscreen,Skin Care,₡10.500.00,Round Lab,50ml,"Protector solar SPF50+ PA++++ con jugo de abedul que hidrata mientras protege contra rayos UV sin dejar residuo blanco"
+6,SKIN 1004 - Madagascar Centella Poremizing Quick Clay Stick Mask,Skin Care,₡11.000.00,SKIN 1004,27g,"Mascarilla en stick de arcilla con centella que minimiza poros, controla sebo y purifica la piel en 10 minutos"
+7,SKIN 1004 - Madagascar Centella Asiatica 100 Ampoule,Skin Care,₡14.000.00,SKIN 1004,100ml,"Ampolla concentrada 100% centella asiática que calma irritaciones, hidrata profundamente y repara la barrera cutánea"
+8,SKIN 1004 - Set de Viaje Madagascar Centella,Skin Care,₡19.000.00,SKIN 1004,1/20ml - 4/30ml,"Kit de viaje completo con los esenciales de centella: ampoule, tónico, crema y espuma limpiadora para piel sensible"
+9,SKIN 1004 - Madagascar Centella Ampoule Kit,Skin Care,₡18.500.00,SKIN 1004,4/30ml,"Set de 4 ampollas concentradas de centella ideales para probar o llevar de viaje, calma y regenera la piel"
+10,Dr. Althea - 345 Relief Cream,Skin Care,₡13.500.00,Dr. Althea,50ml,"Crema calmante con 3 ceramidas, 4 probióticos y 5 péptidos que fortalece la barrera cutánea y alivia pieles sensibles"
+11,numbuzin - No.5 Vitamin Boosting Essential Toner,Skin Care,₡11.000.00,numbuzin,200ml,"Tónico revitalizante con complejo de vitaminas que ilumina, hidrata y prepara la piel para absorber mejor los productos"
+12,numbuzin - Serum No.5 Vitamin Concentrated,Skin Care,₡13.000.00,numbuzin,30ml,"Serum concentrado con vitaminas C, B3, B5 y E que ilumina, reduce manchas oscuras y mejora textura de la piel"
+13,numbuzin - No.5+ Glutathione Vitamin-Niacinamide Concentrated Pad,Skin Care,₡14.000.00,numbuzin,70 pads,"Pads exfoliantes con glutatión, vitaminas y niacinamida que iluminan, unifican el tono y eliminan células muertas"
+14,mixsoon - Bean Essence,Skin Care,₡13.500.00,mixsoon,50ml,"Esencia fermentada de soya, cebada y pera que mejora textura, hidrata profundamente y proporciona nutrientes a la piel"
+15,KSECRET - SEOUL 1988 Serum : Retinal Liposome 2% + Black Ginseng,Skin Care,₡10.000.00,KSECRET,30ml,"Serum anti-edad con retinal 2% y ginseng negro que reduce arrugas, mejora firmeza y revitaliza la piel madura"
+16,KSECRET - SEOUL 1988 Cleansing Oil : Pine Cica 1% + Probiotics,Skin Care,₡12.500.00,KSECRET,200ml,"Aceite limpiador con extracto de pino, centella y probióticos que elimina maquillaje, sebo y deja la piel calmada"
+17,KSECRET - SEOUL 1988 Eye Cream : Retinal Liposome 4% + Fermented Bean,Skin Care,₡9.500.00,KSECRET,30ml,"Crema de ojos con retinal 4% y frijol fermentado que reduce líneas, ojeras y bolsas con fórmula suave pero efectiva"
+18,Tocobo - Cotton Soft Sun Stick,Skin Care,₡10.000.00,Tocobo,19g,"Protector solar en stick SPF50+ PA++++ de textura sedosa que aplica fácilmente sin residuo pegajoso ni blanco"
+19,Tocobo - Vita Waterproof Sun Stick,Skin Care,₡11.000.00,Tocobo,19g,"Protector solar resistente al agua SPF50+ PA++++ con vitaminas que protege durante actividades al aire libre"
+20,Tocobo - Cica Cooling Sun Stick,Skin Care,₡10.500.00,Tocobo,19g,"Protector solar en stick SPF50+ PA++++ con centella que refresca, calma y protege pieles sensibles o irritadas"
+21,Beauty of Joseon - Matte Sun Stick,Skin Care,₡9.500.00,Beauty of Joseon,18g,"Protector solar matte SPF50+ PA++++ ideal para pieles grasas, controla brillo y se puede reaplicar sobre maquillaje"
+22,Beauty of Joseon - Relief Sun Cream,Skin Care,₡11.000.00,Beauty of Joseon,50ml,"Protector solar orgánico SPF50+ PA++++ con arroz y artemisia que hidrata, calma y protege sin irritar la piel"
+23,Hydra Jelly Pocket Lip Jam,Make Up,₡4.000.00,SHEGLAM,"Sugar Swirl,Guava Glow,Apricot Pop,Watermelon Whirl,Strawberry Splash,Fig Flirt,Dragonfruit Dew,Choco Cream","Bálsamo labial en gel con color translúcido e hidratación intensa, deja un acabado jugoso y brillante duradero"
+24,Crystal Glaze Moisturizing Lip Care,Make Up,₡5.000.00,SHEGLAM,"Candy Lane,Strawberry Milk,Melon Pop,Cocoa Cookie","Tratamiento labial hidratante con acabado glaseado tipo cristal que nutre los labios mientras añade brillo sutil"
+25,Fall In Line Peel Off Lip Liner Stain,Make Up,₡3.500.00,SHEGLAM,"Pinky Promise,Brownie Points,Mauvelous","Delineador de labios tipo peel-off que deja un tinte duradero, perfecto para labios definidos que no se corren"
+26,Lip Rules Liner & Gloss Pen-Play,Make Up,₡4.500.00,SHEGLAM,"By The Book,Play Fair,Case x Case,Judgey Much,Golden Rule","Pen 2 en 1 con delineador de labios en un extremo y gloss en el otro, para labios definidos y brillantes"
+27,Take A Hint Lip Tint,Make Up,₡4.000.00,SHEGLAM,"Memories,Birthday Lips,Good Habits,So Fly,Primp,Cheeky,Baby Face,Obsessed,Level Up,Mocha Loca,Love On Tap,Wake-up Call","Tinte labial ligero y de larga duración que deja un color natural tipo tu-labios-pero-mejor, no reseca"
+28,Peel Talk Lip Tint,Make Up,₡4.000.00,SHEGLAM,"Celeb Crush,Samesies,Tongue Twister","Tinte peel-off que se fija en los labios dejando color duradero y resistente al agua, perfecta pigmentación"
+29,Lip Facts Lip Liner,Make Up,₡2.000.00,SHEGLAM,"True Faith,Concrete Jungle,Neutral,Toasted,Mojave,""But First,Coffee"",Solo Dance,Purple Smoke,Momojo,Misty Rose,City Nights,Crimson,Cosmopolitan,Brazen","Delineador de labios cremoso y pigmentado que define con precisión, previene que el labial se corra y dura todo el día"
+30,Pout Pillow Cushion Matte Liquid Lipstick,Make Up,₡5.000.00,SHEGLAM,"Catching Z's,Counting Sheep,Hit The Hay,Nod Off,40 Winks","Labial líquido mate con textura tipo cojín que se siente suave y ligero, alta pigmentación sin resecar los labios"
+31,Color Bloom Liquid Blush,Make Up,₡5.000.00,SHEGLAM,"Pink Slip,Coral Glow,On Call,Lilac Dream,Candy Apple,Fine Carmine","Rubor líquido altamente pigmentado que se difumina fácilmente dejando un acabado natural y fresco en las mejillas"
+32,Glass Glow Blush Stick,Make Up,₡5.000.00,SHEGLAM,"Pink Lemonade,Stunner,Cherry Express,Brisk Babe","Rubor en stick con acabado glaseado tipo vidrio que aporta luminosidad y color con textura cremosa de fácil aplicación"
+33,Lunar Orbit Blush Ball,Make Up,₡5.000.00,SHEGLAM,"Adorn,Delight,Atmosphere,Gravity,Ultraviolet,Galactic,Astrid","Rubor en polvo compacto con pigmentación buildable que se difumina suavemente para un acabado natural o intenso"
+34,Jelly-Licious Hydrating Lip & Blush Tint,Make Up,₡5.000.00,SHEGLAM,"Cheerio,Ahoy,Coucou,Howdy","Tinte multifuncional en gel hidratante para labios y mejillas con acabado fresco y jugoso de larga duración"
+35,All-In-One Volume & Length Mascara,Make Up,₡6.500.00,SHEGLAM,"Washable,Waterproof","Máscara de pestañas todo en uno que aporta volumen y longitud sin grumos, disponible en versión lavable o resistente al agua"
+36,Lashlighter Up & Out Mascara,Make Up,₡5.500.00,SHEGLAM,8ml,"Máscara que levanta, alarga y separa las pestañas con efecto destacador, fórmula ligera que no pesa ni apelmaza"
+37,Set Me Up Brow Hold,Make Up,₡4.000.00,SHEGLAM,5g,"Gel fijador de cejas transparente que mantiene las cejas en su lugar todo el día sin apelmazar ni dejar residuos blancos"
+38,Purito SEOUL - Wonder Releaf Centella BB Cream,Skin Care,₡7.500.00,Purito,"30ml","BB cream con centella que unifica tono, oculta imperfecciones y cuida la piel mientras proporciona cobertura natural"
+39,Purito SEOUL - Wonder Releaf Centella Eye Cream Unscented,Skin Care,₡8.500.00,Purito,30ml,"Crema de ojos sin fragancia con centella que reduce ojeras, hidrata y calma la delicada zona del contorno de ojos"
+40,Purito SEOUL - Wonder Releaf Centella Cream,Skin Care,₡11.000.00,Purito,50ml,"Crema hidratante calmante con centella que repara la barrera cutánea, reduce rojeces e hidrata pieles sensibles"
+41,Purito SEOUL - Wonder Releaf Centella Serum Unscented,Skin Care,₡14.000.00,Purito,60ml,"Serum concentrado sin fragancia con centella que calma irritaciones, fortalece la piel y mejora elasticidad"
+42,Crystal Jelly Glaze Stick,Make Up,₡6.000.00,SHEGLAM,"Rosy Gem,Starlit Silver,Fuchsia Fun,Golden Girl,Aura Blitz,Lilac Luster","Iluminador en stick con textura gelatinosa y acabado cristalino que añade brillo luminoso a pómulos, ojos y labios"
+43,Go Go Glow Highlighting Body Mist,Make Up,₡6.500.00,SHEGLAM,"Champagne Shimmer,Crimson Sparkle,Fairy Twinkle,Gold,Love Bomb,Frosted Opal","Spray corporal iluminador que añade brillo radiante a brazos, piernas y escote, perfecto para ocasiones especiales"
+44,Insta-Ready Face & Under Eye Setting Powder Duo,Make Up,₡7.500.00,SHEGLAM,,"Polvo fijador dual para rostro y contorno de ojos que sella el maquillaje, controla brillo y difumina imperfecciones"
+45,Matte Allure Lipstick,Make Up,₡5.500.00,SHEGLAM,,"Labial mate cremoso de alta pigmentación con acabado aterciopelado que no reseca, disponible en múltiples tonos"
+47,Matte Allure Mini Liquid Lipstick,Make Up,₡5.000.00,SHEGLAM,3pcs,"Set de 3 labiales líquidos mate en tamaño mini, perfectos para probar tonos o llevar de viaje, fórmula duradera"
+48,SKIN 1004 - Madagascar Centella Ampoule Foam,Skin Care,₡10.500.00,SKIN 1004,125ml,"Espuma limpiadora con centella que limpia profundamente sin resecar, remueve impurezas y calma la piel irritada"
+49,SKIN 1004 - Madagascar Centella Light Cleansing Oil,Skin Care,₡11.500.00,SKIN 1004,200ml,"Aceite limpiador ligero con centella que disuelve maquillaje waterproof y protector solar sin dejar sensación grasosa"
+50,Arencia - Fresh Green Rice Mochi Cleanser,Skin Care,₡11.500.00,Arencia,120g,"Limpiador tipo mochi con arroz verde que exfolia suavemente, controla sebo y deja la piel suave sin irritar"
+51,Precision Sculpt Liquid Contour Duo,Make Up,₡6.500.00,SHEGLAM,,"Contorno líquido dual con aplicador preciso que define y esculpe el rostro con acabado natural y difuminado"
+52,Purito SEOUL - Mighty Bamboo Panthenol Cream,Skin Care,₡11.000.00,Purito,100ml,"Crema hidratante con bambú y pantenol que repara, calma y fortalece la barrera cutánea intensamente"
+53,Lashlighter Remove Lash Treatment,Make Up,₡5.500.00,SHEGLAM,,"Tratamiento removedor de pestañas que facilita la limpieza de máscara waterproof mientras acondiciona y fortalece"
+54,Anua - Heartleaf Succinic Moisture Cleansing Foam,Skin Care,₡12.000.00,Anua,150ml,"Espuma limpiadora con heartleaf y ácido succínico que elimina impurezas, controla sebo y calma piel propensa al acné"
+55,medicube - PDRN Pink Peptide Serum,Skin Care,₡13.000.00,medicube,30ml,"Serum regenerador con PDRN y péptidos que mejora elasticidad, reduce arrugas y revitaliza la piel desde adentro"
+56,Purito SEOUL - Mighty Bamboo Panthenol Cleanser,Skin Care,₡10.000.00,Purito,150ml,"Limpiador gel-crema con bambú y pantenol que limpia suavemente sin irritar, ideal para pieles secas y sensibles"
+57,Arencia - Holy Hyssop Serum 30,Skin Care,₡11.000.00,Arencia,50g,"Serum con hisopo santo que calma irritaciones, reduce rojeces y fortalece la barrera cutánea de pieles sensibles"
+58,medicube - Zero Pore Blackhead Mud Mask,Skin Care,₡11.000.00,medicube,100g,"Mascarilla de arcilla que elimina puntos negros, minimiza poros y controla exceso de sebo con extractos botánicos"
+59,Anua - Peach 70 Niacin Serum,Skin Care,₡12.000.00,Anua,30ml,"Serum con 70% extracto de durazno y niacinamida que ilumina, mejora textura y reduce apariencia de poros"
+60,Anua - Niacinamide 10 TXA 4 Serum,Skin Care,₡15.500.00,Anua,30ml,"Serum con 10% niacinamida y 4% tranexámico que combate manchas oscuras, unifica tono y previene hiperpigmentación"
+61,SKIN 1004 - Madagascar Centella Double Cleansing Duo Set,Skin Care,₡18.500.00,SKIN 1004,Oil/Foam,"Set de limpieza doble con aceite y espuma de centella para rutina completa que elimina todo tipo de impurezas"
+62,Anua - Azelaic Acid 10 Hyaluron Redness Soothing Serum,Skin Care,₡14.500.00,Anua,30ml,"Serum con 10% ácido azelaico y hialurónico que reduce rojeces, calma rosácea y uniforma tono de la piel"
+63,Arencia - Fresh Rosehip Rice Mochi Cleanser,Skin Care,₡11.500.00,Arencia,120g,"Limpiador mochi con rosa mosqueta que ilumina, exfolia suavemente y deja la piel radiante y suave al tacto"
+64,Arencia - Green Tea + LHA Deep Pore Rice Cake Cleanser,Skin Care,₡12.500.00,Arencia,150g,"Limpiador con té verde y LHA que limpia poros profundamente, controla sebo y previene brotes sin irritar"
+65,Beauty of Joseon - Relief Sun Aqua-fresh,Skin Care,₡11.500.00,Beauty of Joseon,50ml,"Protector solar acuoso SPF50+ PA++++ con textura ultra ligera que se absorbe rápidamente sin sensación pegajosa"
+66,Abib - Heartleaf Spot Pad Calming Touch,Skin Care,₡12.500.00,Abib,80 pads,"Pads calmantes con heartleaf que reducen rojeces, calman irritaciones y controlan sebo en zonas propensas al acné"
+67,Arencia - Rice Mucin Cleanser,Skin Care,₡11.500.00,Arencia,120g,"Limpiador con mucina de arroz que hidrata intensamente mientras limpia, deja la piel nutrida, suave y luminosa"
+68,Purito SEOUL - TXA 6 Niacinamide 10 Retinal Serum,Skin Care,₡14.000.00,Purito,30ml,"Serum triple acción con tranexámico, niacinamida y retinal que combate manchas, arrugas y mejora firmeza"
+69,Anua - Double Cleansing Duo Set,Skin Care,₡22.000.00,Anua,Oil/Foam,"Set completo de limpieza doble con aceite y espuma Heartleaf para remover todo tipo de impurezas sin irritar"
+70,Anua - Heartleaf Pore Control Cleansing Oil,Skin Care,₡13.500.00,Anua,200ml,"Aceite limpiador con heartleaf que disuelve maquillaje y sebo, minimiza poros y calma la piel sin obstruir"
+71,Anua - Heartleaf Quercetinol Pore Deep Cleansing Foam,Skin Care,₡10.500.00,Anua,150ml,"Espuma limpiadora con heartleaf y quercetinol que limpia poros profundamente, controla sebo y calma inflamación"
+72,COSRX - Low pH Good Morning Gel Cleanser,Skin Care,₡10.000.00,COSRX,150ml,"Limpiador gel suave con pH bajo que limpia sin irritar, mantiene equilibrio de la piel y es ideal para uso diario"
+73,Beauty of Joseon - Green Plum Refreshing Cleanser,Skin Care,₡10.000.00,Beauty of Joseon,100ml,"Limpiador refrescante con ciruela verde que exfolia suavemente con AHA, elimina células muertas y deja piel suave"
+74,Beauty of Joseon - Revive Eye Serum,Skin Care,₡12.000.00,Beauty of Joseon,30ml,"Serum de ojos con ginseng y retinal que reduce arrugas, ojeras y bolsas, revitaliza el contorno de ojos cansado"
+75,numbuzin - No.9 NAD Bio Lifting-sil Essence,Skin Care,₡16.000.00,numbuzin,50ml,"Esencia lifting con NAD que mejora elasticidad, reduce flacidez y revitaliza la piel con efecto tensor inmediato"
+76,Arencia - Calendula Rice Mochi Cleanser,Skin Care,₡11.500.00,Arencia,120g,"Limpiador mochi con caléndula que calma irritaciones, limpia suavemente y es perfecto para pieles sensibles y reactivas"
+77,Arencia - Rice Mucin Glow Serum 30,Skin Care,₡12.500.00,Arencia,50g,"Serum con mucina de arroz que hidrata intensamente, ilumina el rostro y mejora elasticidad con acabado luminoso"
+78,SKIN 1004 - Lab in Nature Madagascar Centella Niacinamide 10 Boosting Shot Ampoule,Skin Care,₡11.000.00,SKIN 1004,30ml,"Ampolla concentrada con 10% niacinamida y centella que ilumina, minimiza poros y mejora textura de la piel"
+79,Anua - Heartleaf 77 Clear Pad,Skin Care,₡14.500.00,Anua,160ml,"Pads exfoliantes con 77% heartleaf que eliminan células muertas, calman irritaciones y preparan la piel"
+80,SKIN 1004 - Lab in Nature Madagascar Centella Retinol 0.2 Boosting Shot Ampoule,Skin Care,₡13.000.00,SKIN 1004,30ml,"Ampolla con 0.2% retinol puro y centella que reduce arrugas, mejora firmeza y calma mientras regenera la piel"
+81,Purito SEOUL - Oat-In Calming Gel Cream,Skin Care,₡12.000.00,Purito,100ml,"Crema gel con avena que calma intensamente pieles irritadas, hidrata sin peso y fortalece barrera cutánea"
+82,medicube - Zero Pore Pad 2.0,Skin Care,₡17.000.00,medicube,70 pads,"Pads exfoliantes de doble cara que minimizan poros, controlan sebo, eliminan puntos negros y texturizan la piel"
+83,celimax - The Vita-A Retinal Shot Tightening Booster,Skin Care,₡13.500.00,celimax,15ml,"Booster intensivo con retinal que mejora firmeza, reduce arrugas profundas y restaura elasticidad perdida"
+84,JUMISO - All Day Vitamin Brightening & Balancing Facial Serum,Skin Care,₡11.500.00,JUMISO,30ml,"Serum con complejo de vitaminas que ilumina, equilibra pH y mejora tono de piel opaca con uso continuo"
+85,SKIN 1004 - Madagascar Centella Hyalu-Cica Water-Fit Sun Serum,Skin Care,₡10.000.00,SKIN 1004,50ml,"Protector solar serum SPF50+ PA++++ con centella y ácido hialurónico que hidrata mientras protege sin residuo"
+86,Arencia - Fresh Red Smoothie Serum 30,Skin Care,₡12.500.00,Arencia,50g,"Serum antioxidante con frutas rojas que revitaliza, protege contra radicales libres y aporta luminosidad juvenil"
+87,COSRX - Advanced Snail 96 Mucin Power Essence,Skin Care,₡14.000.00,COSRX,100ml,"Esencia con 96% mucina de caracol que repara, hidrata profundamente y mejora elasticidad de todo tipo de pieles"
