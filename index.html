@@ -5,15 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crystal Beauty</title>
     <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="stylesheet" href="styles.css?v=2.0">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/navigation.css">
+    <link rel="stylesheet" href="css/catalog.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
     <!-- Top Navigation Bar -->
     <nav class="top-nav">
         <div class="container">
             <div class="nav-content">
-                <img src="favicon.png" alt="Crystal Beauty Logo" class="nav-logo">
-                <h1 class="brand-name">Crystal Beauty</h1>
+                <div class="nav-left">
+                    <img src="favicon.png" alt="Crystal Beauty Logo" class="nav-logo">
+                    <h1 class="brand-name">Crystal Beauty</h1>
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link active">Catálogo</a></li>
+                    <li><a href="pages/how-it-works.html" class="nav-link">Cómo Funciona</a></li>
+                    <li><a href="pages/contact.html" class="nav-link">Contáctanos</a></li>
+                </ul>
             </div>
         </div>
     </nav>
@@ -53,6 +69,7 @@
     <!-- Scroll to top button -->
     <button id="scrollToTop" class="scroll-to-top" aria-label="Volver arriba">↑</button>
 
+    <script src="js/navigation.js"></script>
     <script src="script.js?v=2.0"></script>
 </body>
 </html>

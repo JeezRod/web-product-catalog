@@ -1,0 +1,271 @@
+/* Responsive Styles */
+
+@media (max-width: 768px) {
+    .nav-content {
+        padding: 8px 15px;
+    }
+
+    .nav-left {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgb(249, 249, 249);
+        flex-direction: column;
+        gap: 0;
+        padding: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-menu.active {
+        max-height: 300px;
+    }
+
+    .nav-menu li {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(241, 197, 214, 0.2);
+    }
+
+    .nav-menu li:last-child {
+        border-bottom: none;
+    }
+
+    .nav-link {
+        display: block;
+        font-size: 1em;
+        padding: 15px;
+        border-radius: 0;
+    }
+
+    .nav-logo {
+        width: 35px;
+        height: 35px;
+    }
+
+    .brand-name {
+        font-size: 1.3em;
+    }
+
+    .banner {
+        padding: 0px 15px;
+    }
+
+    .banner p {
+        font-size: 0.85em;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    .content-page {
+        padding: 20px;
+    }
+
+    .content-page h1 {
+        font-size: 2em;
+    }
+
+    .how-title {
+        font-size: 2em !important;
+    }
+
+    .bubble-card {
+        padding: 25px 20px;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    .bubble-card::before {
+        display: none;
+    }
+
+    .bubble-card h3 {
+        font-size: 1.2em;
+    }
+
+    .bubble-card p {
+        font-size: 1em;
+    }
+
+    .delivery-info {
+        padding: 20px;
+    }
+
+    .delivery-info p {
+        font-size: 1em;
+    }
+
+    .delivery-options {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .delivery-options li {
+        padding: 12px 20px;
+        font-size: 1em;
+    }
+
+    .contact-banner {
+        padding: 25px 20px;
+    }
+
+    .contact-banner h3 {
+        font-size: 1.4em;
+    }
+
+    .contact-banner p {
+        font-size: 1em;
+    }
+
+    .contact-methods {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-section {
+        padding: 30px 15px;
+    }
+
+    .cta-section h2 {
+        font-size: 1.6em;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .filters {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .filter-group {
+        width: 100%;
+        min-width: unset;
+    }
+
+    .product-image {
+        height: 320px;
+    }
+
+    .product-info {
+        padding: 15px;
+    }
+
+    .product-name {
+        font-size: 1.2em;
+    }
+
+    .product-price {
+        font-size: 1.2em;
+    }
+
+    .slider-arrow {
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+    }
+
+    .slider-arrow.prev {
+        left: 5px;
+    }
+
+    .slider-arrow.next {
+        right: 5px;
+    }
+
+    .scroll-to-top {
+        width: 40px;
+        height: 40px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-content {
+        padding: 7px 12px;
+    }
+
+    .nav-logo {
+        width: 30px;
+        height: 30px;
+    }
+
+    .brand-name {
+        font-size: 1.1em;
+    }
+
+    .banner p {
+        font-size: 0.8em;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    .filters {
+        padding: 12px;
+    }
+
+    .product-grid {
+        gap: 15px;
+    }
+
+    .product-image {
+        height: 280px;
+    }
+
+    .product-info {
+        padding: 12px;
+    }
+
+    .product-name {
+        font-size: 1.1em;
+    }
+
+    .product-category {
+        font-size: 0.8em;
+        padding: 4px 10px;
+    }
+
+    .product-price {
+        font-size: 1.1em;
+    }
+
+    .product-brand,
+    .product-presentation {
+        font-size: 0.85em;
+    }
+
+    .slider-arrow {
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+    }
+
+    .indicator-dot {
+        width: 6px;
+        height: 6px;
+    }
+
+    .image-indicators {
+        gap: 6px;
+        padding: 6px 10px;
+    }
+}

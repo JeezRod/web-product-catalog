@@ -381,10 +381,20 @@ function filterProducts() {
     displayProducts(filtered);
 }
 
-// Event listeners
-document.getElementById('searchInput').addEventListener('input', filterProducts);
-document.getElementById('categoryFilter').addEventListener('change', filterProducts);
-document.getElementById('brandFilter').addEventListener('change', filterProducts);
+// Event listeners - only add if elements exist (catalog page)
+const searchInput = document.getElementById('searchInput');
+const categoryFilter = document.getElementById('categoryFilter');
+const brandFilter = document.getElementById('brandFilter');
+
+if (searchInput) {
+    searchInput.addEventListener('input', filterProducts);
+}
+if (categoryFilter) {
+    categoryFilter.addEventListener('change', filterProducts);
+}
+if (brandFilter) {
+    brandFilter.addEventListener('change', filterProducts);
+}
 
 // Scroll to top button functionality
 const scrollToTopBtn = document.getElementById('scrollToTop');
