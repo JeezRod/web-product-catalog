@@ -97,6 +97,8 @@ function populateCategoryFilter() {
     const categories = [...new Set(allProducts.map(p => p['Product Type']))].sort();
     const categoryFilter = document.getElementById('categoryFilter');
     
+    if (!categoryFilter) return; // Skip if element doesn't exist
+    
     categories.forEach(category => {
         const option = document.createElement('option');
         option.value = category;
@@ -370,7 +372,8 @@ function createProductCard(product) {
 // Filter products
 function filterProducts() {
     const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-    const categoryFilter = document.getElementById('categoryFilter').value;
+    const categoryFilterElement = document.getElementById('categoryFilter');
+    const categoryFilter = categoryFilterElement ? categoryFilterElement.value : 'Skin Care';
     const brandFilter = document.getElementById('brandFilter').value;
 
     const filtered = allProducts.filter(product => {
@@ -379,7 +382,10 @@ function filterProducts() {
             product.Brand.toLowerCase().includes(searchTerm) ||
             product.Presentation.toLowerCase().includes(searchTerm);
 
-        const matchesCategory = !categoryFilter || product['Product Type'] === categoryFilter;
+        // Default to Skin Care if no category selected
+        const matchesCategory = categoryFilter 
+            ? product['Product Type'] === categoryFilter 
+            : product['Product Type'] === 'Skin Care';
         const matchesBrand = !brandFilter || product.Brand === brandFilter;
 
         return matchesSearch && matchesCategory && matchesBrand;
