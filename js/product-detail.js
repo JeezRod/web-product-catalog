@@ -188,9 +188,6 @@ function displayProduct(product) {
                 <a href="${whatsappLink}" target="_blank" class="whatsapp-btn">
                     💬 Consultar por WhatsApp
                 </a>
-                <a href="../index.html" class="back-btn">
-                    ← Volver al catálogo
-                </a>
             </div>
         </div>
     `;
@@ -215,7 +212,6 @@ async function loadProduct() {
             <div class="error">
                 <h2>⚠️ Producto no encontrado</h2>
                 <p>No se especificó un producto válido.</p>
-                <a href="../index.html" class="back-btn">Volver al catálogo</a>
             </div>
         `;
         return;
@@ -249,7 +245,6 @@ async function loadProduct() {
             <div class="error">
                 <h2>⚠️ Error al cargar el producto</h2>
                 <p>${error.message}</p>
-                <a href="../index.html" class="back-btn">Volver al catálogo</a>
             </div>
         `;
     }
